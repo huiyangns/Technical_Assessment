@@ -1,0 +1,48 @@
+{
+  "name": "technical_assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "e2e:ci:chrome": "npx cypress run --env TAGS='@regression' --browser chrome --e2e --headless",
+    "e2e:ci:firefox": "npx cypress run --env TAGS='@regression' --browser firefox --e2e --headless",
+    "e2e:ci:edge": "npx cypress run --env TAGS='@regression' --browser edge --e2e --headless",
+    "e2e:local:repeat:chrome": "npx cypress-repeat run -n 5 --env TAGS='@regression' --headless --browser chrome --e2e"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/StepDefinitions/**/*.js"
+    ],
+    "filterSpecs": true,
+    "messages": {
+      "enabled": true,
+      "output": "cypress/cucumber-json/cucumber-messages.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumberJsonFormatter/cucumber-json-formatter",
+      "output": "cypress/cucumber-json/report.json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "cypress/cucumber-json/cucumber-report.html"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huiyangns/Technical_Assessment.git"
+  },
+  "author": "Oliver Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huiyangns/Technical_Assessment/issues"
+  },
+  "homepage": "https://github.com/huiyangns/Technical_Assessment#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.17.4",
+    "cypress-on-fix": "^1.0.2",
+    "cypress-repeat": "^2.3.4"
+  }
+}
