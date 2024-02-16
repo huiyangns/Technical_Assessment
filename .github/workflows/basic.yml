@@ -1,0 +1,36 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run-chrome:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests test
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run e2e:ci:chrome
+  cypress-run-firefox:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests test
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run e2e:ci:firefox
+  cypress-run-edge:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests test
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run e2e:ci:edge
