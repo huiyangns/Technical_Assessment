@@ -9,13 +9,13 @@
         - POM (Page Object model)
         - StepDefinitions (Cucumber step definitions)
 - Dockerfile (Build Cypess docker image)
-- Jenkinsfile (Clone repor, build docker image and conduct tests across chrome, firefox and edge)
+- Jenkinsfile (Clone repo, build docker image and conduct tests across chrome, firefox and edge)
 - Makefile / node.sh (Install all dependencies)  
 __Tips__: If we run tests in headless mode, a folder called cucumber-json will be created, which contains reports in json and html format.
 
 ## How to install dependencies
 1. Open a terminal under project folder
-2. Use `make` command to install all dependencies  
+2. Use `make` command to install all dependencies based on Node 18 via Docker
 This will guarantee the consistency of environment for everyone  
 __Tips__: If you see `make: execvp: ./node.sh: Permission denied` issue, please use `sudo chmod 777 node.sh` and try again
 

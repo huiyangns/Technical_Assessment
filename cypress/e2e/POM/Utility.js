@@ -55,12 +55,12 @@ class Utility {
 
     /**
   * @method
-  * @description Get stored value in dataShare
-  * @param {string} name - Serve as a key.
-  * @returns {string} - Stored value in dataShare indexed by key.
+  * @description Replace subString dataShare[key] with stored value in dataShare indexed by key or with key itself if key doesn't exist in dataShare
+  * @param {string} input - Original input string.
+  * @returns {string} - Parsed string.
   */
-    parseDataShareVal(name) {
-        return name.replace(/dataShare\[(.+?)\]/gi, (match, $1) => {
+    parseDataShareVal(input) {
+        return input.replace(/dataShare\[(.+?)\]/gi, (match, $1) => {
             return (this.dataShare[$1] ?? $1);
         });
     }

@@ -2,7 +2,7 @@ import { When } from "@badeball/cypress-cucumber-preprocessor";
 import contactInstace from "../POM/ContactPage/Contact";
 
 /**
- * This file contains all step definitions related to Contact
+ * This file contains all step definitions related to Contact Page
  */
 
 //Verify the visibility of error msg besides mandatory fields
@@ -29,7 +29,7 @@ When('I {string} error message existed besides {string} field', (checkcase, idVa
   }
 })
 
-//Verify the style of mandatory fields when errors happen
+//Verify the style of mandatory fields when errors happen or not
 When('I {string} the {string} field displayed with {string} style', (checkcase, fieldName, css) => {
   switch (checkcase) {
     case "should see":
@@ -57,7 +57,7 @@ When('I {string} the header message contains {string}', (checkcase, text) => {
   }
 })
 
-// Verify the style of header msg
+// Verify the style of header msg when errors happen or not
 When('I {string} the header message displayed with {string} style', (checkcase, css) => {
   switch (checkcase) {
     case "should see":
